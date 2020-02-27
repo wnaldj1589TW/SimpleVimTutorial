@@ -1,0 +1,38 @@
+call plug#begin()
+
+Plug 'rhysd/vim-clang-format'
+Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+
+let g:clang_format#code_style = "google"
+let g:clang_format#style_options = {
+\ "NamespaceIndentation" : "All",
+\ "AccessModifierOffset":-4,
+\ "IndentWidth": 4,
+\ "BreakBeforeBraces" : "Custom",
+\ "BraceWrapping" : {
+\       "AfterClass":"true",
+\       "AfterControlStatement": "false",
+\       "AfterEnum": "true",
+\       "AfterFunction": "true",
+\       "AfterNamespace":"true",
+\       "AfterObjCDeclaration": "true",
+\       "AfterStruct": "true",
+\       "BeforeCatch": "true",
+\       "BeforeElse":"true",
+\       "IndentBraces":"false"
+\       },
+\ "AllowShortFunctionsOnASingleLine": "None",
+\ "AlignAfterOpenBracket": "true"
+\ }
+"autocmd FileType cpp nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+"autocmd FileType cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
+let g:clang_format#auto_format = 1
+
+let g:DoxygenToolkit_briefTag_pre = "\\brief "
+let g:DoxygenToolkit_paramTag_pre = "\\param "
+autocmd FileType cpp nnoremap <buffer><Leader>d :Dox<CR><ESC>
+call plug#end()
