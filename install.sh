@@ -8,6 +8,7 @@ sudo apt install -y vim clang-format
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+cat vimrc >> ~/.vimrc
 cat plugin_list >> ~/.vimrc
 
 vim +slient +VimEnter +PlugInstall +qall
