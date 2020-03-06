@@ -9,6 +9,10 @@ You can change style of clang-format by editing g:clang-format#style\_options in
 
 3. You can move vim window with <Tab> in clockwise(<Shift-Tab> in anticlockwise).
 
+4. With C-k (ctrl + k), you can comment the current line.  
+With C-j (ctrl + j), you can uncomment the current line.  
+With visual block, you could comment multiple line.
+
 # 3. Caution
 `install.sh` appends vim configurations to your ~/.vimrc.  
 Please be careful if you already set vim configuration.
